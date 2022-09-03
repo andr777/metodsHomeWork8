@@ -20,7 +20,7 @@ public class Main {
         //year = 2021;
         year = LocalDate.now().getYear();
 
-        System.out.println(visokosnyiGod(year)); // visokosnyiGod() метод для определения високосности года, см.ниже.
+        System.out.println(isLeapYear(year)); // isLeapYear() метод для определения високосности года, см.ниже.
         System.out.println(" ");
 
         /* ### Задание 2
@@ -46,7 +46,7 @@ public class Main {
         int clientDeviceYear = 2022;
         int typeOS = 0;
 
-        System.out.println(metodOpredeleniyaOS(typeOS, clientDeviceYear)); // metodOpredeleniyaOS() метод для определения что ставить
+        System.out.println(checkVersionOs(typeOS, clientDeviceYear)); // checkVersionOs() метод для определения что ставить
         System.out.println(" ");
 
         /* ### Задание 3
@@ -75,8 +75,8 @@ public class Main {
 
 
     /* ### Задание 1 */
-    // visokosnyiGod() метод для определения високосности года
-    public static String visokosnyiGod(Double year) {
+    // isLeapYear() метод для определения високосности года
+    public static String isLeapYear(Double year) {
         if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
             return "" + (String.format("%.0f", year)) + " - високосный год";
         } else {
@@ -85,10 +85,10 @@ public class Main {
     }
 
     /* ### Задание 2  */
-    // metodOpredeleniyaOS() метод для определения что ставить
+    // checkVersionOs() метод для определения что ставить
     // 0 — iOS, 1 — Android
 // Если устройство старше текущего года, предложите ему установить lite-версию (облегченную версию).
-    public static String metodOpredeleniyaOS(int typeOS, int clientDeviceYear) {
+    public static String checkVersionOs(int typeOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear(); // узнаём год для сравнения
 
         if (typeOS == 0 && clientDeviceYear < currentYear) {
